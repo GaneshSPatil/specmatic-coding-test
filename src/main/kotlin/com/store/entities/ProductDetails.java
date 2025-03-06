@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -24,4 +25,8 @@ public class ProductDetails {
     @Min(1)
     @Max(9999)
     private int inventory;
+
+    @NotNull
+    @Builder.Default
+    private Double cost = 0.0;
 }

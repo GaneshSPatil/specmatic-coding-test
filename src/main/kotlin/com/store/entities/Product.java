@@ -16,6 +16,7 @@ public class Product extends ProductDetails {
                 .name(details.getName())
                 .type(details.getType())
                 .inventory(details.getInventory())
+                .cost(details.getCost())
                 .build();
     }
 }
