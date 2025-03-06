@@ -27,3 +27,6 @@ jobs:
     - name: Build with Maven
       working-directory: main
       run: mvn test
+    - name: Check API backward compatibility
+      working-directory: main
+      run: mvn exec:java
