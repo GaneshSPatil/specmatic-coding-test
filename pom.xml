@@ -208,9 +208,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.4.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <configuration>
-                    <fork>true</fork>
                     <mainClass>com.store.Application</mainClass>
                 </configuration>
                 <executions>
@@ -273,11 +272,36 @@
                         <groupId>io.specmatic</groupId>
                         <artifactId>junit5-support</artifactId>
                         <version>${specmatic.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>commons-logging</groupId>
+                                <artifactId>commons-logging</artifactId>
+                            </exclusion>
+                        </exclusions>
                     </dependency>
                     <dependency>
                         <groupId>io.specmatic</groupId>
                         <artifactId>specmatic-executable</artifactId>
                         <version>${specmatic.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-starter</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-autoconfigure</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-core</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                        <version>${jackson.core.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
